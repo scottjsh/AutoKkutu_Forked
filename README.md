@@ -5,7 +5,7 @@
     <p align="center">로고 제작에 사용된 모레미 이미지는 <a href="https://github.com/JJoriping">쪼리핑</a>님에 의해 제작되었습니다.</p>
 </p>
 
-[![Build status](https://ci.appveyor.com/api/projects/status/naj4ivudu5wrown4?svg=true)](https://ci.appveyor.com/project/scottjsh/AutoKkutu_Forked)
+[![Build status](https://ci.appveyor.com/api/projects/status/9w5a25r7wahkmbgl?svg=true)](https://ci.appveyor.com/project/scottjsh/autokkutu-forked)
 [![Issues](https://img.shields.io/github/issues/scottjsh/AutoKkutu_Forked.svg)](https://github.com/scottjsh/AutoKkutu_Forked/issues)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/scottjsh/AutoKkutu_Forked)
 ![GitHub repo size](https://img.shields.io/github/repo-size/scottjsh/AutoKkutu_Forked)
@@ -23,7 +23,7 @@ AutoKkutu는 끄투 헬퍼 V (KKutu-Helper V) Release v5.6.8500 버전을 개조
 
 ## 다운로드 / 설치 방법
 
-- README 상단의 Build status 버튼 또는 [이 링크](https://ci.appveyor.com/project/scottjsh/AutoKkutu_Forked/branch/main)을 클릭하여 AppVeyor CI에서 nightly 버전을 다운로드받으실 수 있습니다.
+- README 상단의 Build status 버튼 또는 [이 링크](https://ci.appveyor.com/project/scottjsh/autokkutu-forked)을 클릭하여 AppVeyor CI에서 nightly 버전을 다운로드받으실 수 있습니다.
   - 상단의 AppVeyor 링크를 클릭하신 후, `Artifacts`라는 버튼을 찾아 클릭합니다. 그러면 `Windows.x64.Release.7z`라는 파일이 보일 것입니다. 이를 클릭하여 다운받으신 후 [반디집](https://kr.bandisoft.com/bandizip/), [7-zip](https://www.7-zip.org/download.html) 또는 [PeaZip](https://peazip.github.io/peazip-64bit.html) 등으로 압축을 풀고 사용하시면 됩니다.
 - 사용중인 운영 체제에 맞는 버전(32비트 또는 64비트)를 다운로드 후, 압축을 풀고, AutoKkutuGui.exe 파일을 실행시키면 됩니다.
   - .NET 6.0이 설치되어 있지 않을 경우, 이에 대한 설치 요구 메세지가 뜰 수 있습니다.
