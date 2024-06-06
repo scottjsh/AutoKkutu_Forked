@@ -28,11 +28,7 @@ public abstract class DbConnectionBase : IDbConnection
 
 	public ConnectionState State => Connection.State;
 
-	protected DbConnectionBase(IDbConnection connection)
-	{
-		Connection = connection;
-		NodeManager = new NodeManager(this);
-	}
+	protected DbConnectionBase(IDbConnection connection) => Connection = connection;
 
 	protected virtual void Dispose(bool disposing)
 	{
