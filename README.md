@@ -5,14 +5,14 @@
     <p align="center">로고 제작에 사용된 모레미 이미지는 <a href="https://github.com/JJoriping">쪼리핑</a>님에 의해 제작되었습니다.</p>
 </p>
 
-[![Build status](https://ci.appveyor.com/api/projects/status/u0rt1gkhv7lbi7e4?svg=true)](https://ci.appveyor.com/project/hsheric0210/autokkutu)
-[![Issues](https://img.shields.io/github/issues/hsheric0210/AutoKkutu.svg)](https://github.com/hsheric0210/AutoKkutu/issues)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hsheric0210/AutoKkutu)
-![GitHub repo size](https://img.shields.io/github/repo-size/hsheric0210/autokkutu)
-[![Maintainability](https://api.codeclimate.com/v1/badges/7709ad79cf511830e0bf/maintainability)](https://codeclimate.com/github/hsheric0210/AutoKkutu/maintainability)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=hsheric0210_AutoKkutu&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=hsheric0210_AutoKkutu)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=hsheric0210_AutoKkutu&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=hsheric0210_AutoKkutu)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=hsheric0210_AutoKkutu&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=hsheric0210_AutoKkutu)
+[![Build status](https://ci.appveyor.com/api/projects/status/khv4vif3agb36adt?svg=true)](https://ci.appveyor.com/project/scottjsh/autokkutu)
+[![Issues](https://img.shields.io/github/issues/scottjsh/AutoKkutu.svg)](https://github.com/scottjsh/AutoKkutu/issues)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/scottjsh/AutoKkutu)
+![GitHub repo size](https://img.shields.io/github/repo-size/scottjsh/autokkutu)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7709ad79cf511830e0bf/maintainability)](https://codeclimate.com/github/scottjsh/AutoKkutu/maintainability)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=scottjsh_AutoKkutu&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=scottjsh_AutoKkutu)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=scottjsh_AutoKkutu&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=scottjsh_AutoKkutu)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=scottjsh_AutoKkutu&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=scottjsh_AutoKkutu)
 
 AutoKkutu는 끄투 헬퍼 V (KKutu-Helper V) Release v5.6.8500 버전을 개조하여 만들어졌습니다.
 원 프로그램은 [여기](https://drive.google.com/file/d/1p_vTzLbkIPz-NBLuhEKTdK3ij55u7KNk/view?usp=sharing)에서, 글은 [여기](https://gall.dcinside.com/mgallery/board/view/?id=kkutu&no=395)에서 보실 수 있습니다. 원본 프로그램에서는 CloudPlatform UI를 사용했지만, 이 부분은 개발 과정에서 제거되었습니다.
@@ -23,7 +23,7 @@ AutoKkutu는 끄투 헬퍼 V (KKutu-Helper V) Release v5.6.8500 버전을 개조
 
 ## 다운로드 / 설치 방법
 
-* README 상단의 Build status 버튼 또는 [이 링크](https://ci.appveyor.com/project/hsheric0210/autokkutu/branch/main)을 클릭하여 AppVeyor CI에서 nightly 버전을 다운로드받으실 수 있습니다.
+* README 상단의 Build status 버튼 또는 [이 링크](https://ci.appveyor.com/project/scottjsh/autokkutu/branch/main)을 클릭하여 AppVeyor CI에서 nightly 버전을 다운로드받으실 수 있습니다.
   * 상단의 AppVeyor 링크를 클릭하신 후, ```Artifacts```라는 버튼을 찾아 클릭합니다. 그러면 ```Windows.x64.Release.7z```라는 파일이 보일 것입니다. 이를 클릭하여 다운받으신 후 [반디집](https://kr.bandisoft.com/bandizip/), [7-zip](https://www.7-zip.org/download.html) 또는 [PeaZip](https://peazip.github.io/peazip-64bit.html) 등으로 압축을 풀고 사용하시면 됩니다.
 * 사용중인 운영 체제에 맞는 버전(32비트 또는 64비트)를 다운로드 후, 압축을 풀고, AutoKkutuGui.exe 파일을 실행시키면 됩니다.
   * .NET 6.0이 설치되어 있지 않을 경우, 이에 대한 설치 요구 메세지가 뜰 수 있습니다.
