@@ -152,7 +152,7 @@ public class CefSharpBrowser : BrowserBase
 		LibLogger.Verbose<CefSharpBrowser>("ChromiumWebBrowser instance created.");
 	}
 
-	private void OnInitialized(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
+	private async void OnInitialized(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
 	{
 		if (!browser.IsBrowserInitialized)
 			return;
@@ -166,8 +166,32 @@ public class CefSharpBrowser : BrowserBase
 		browser.GetDevToolsClient().Page.AddScriptToEvaluateOnNewDocumentAsync(nameRandom.ApplyTo(LibResources.namespaceInitJs + ';' + CefSharpResources.communicatorJs + ';' + LibResources.mainHelperJs));
 		// browser.GetDevToolsClient().Page.AddScriptToEvaluateOnNewDocumentAsync(nameRandom.ApplyTo(LibResources.namespaceInitJs + ';' + LibResources.mainHelperJs + ';' + CefSharpResources.communicatorJs)); // TODO: try this.
 
+		await EnableAdBlockingAsync();
 		LibLogger.Info<CefSharpBrowser>("ChromiumWebBrowser initialized.");
 	}
+
+	private async Task EnableAdBlockingAsync()
+    {
+        var devToolsClient = browser.GetDevToolsClient();
+
+        // 네트워크 요청을 추적하기 위해 Network.enable 호출
+        var enableParams = new Dictionary<string, object>();
+        await devToolsClient.ExecuteDevToolsMethodAsync("Network.enable", enableParams);
+
+        // 광고 차단 기능 활성화
+        var blockAdsParams = new Dictionary<string, object>
+		{
+			["urls"] = new string[]
+			{
+				"*://*.doubleclick.net/*",
+				"*://*.adservice.google.com/*",
+				"*://*.googlesyndication.com/*",
+				"*://*.googleadservices.com/*",
+				"*://*.adsafeprotected.com/*"
+			}
+		};
+        await devToolsClient.ExecuteDevToolsMethodAsync("Network.setBlockedURLs", blockAdsParams);
+    }
 
 	public void OnWebSocketSend(object? sender, JavaScriptBindingObject.WebSocketJsonMessageEventArgs args)
 	{
