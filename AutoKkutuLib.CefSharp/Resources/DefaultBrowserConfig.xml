@@ -8,16 +8,16 @@
 
     <!-- 기본적으로 모든 스크립트를 주입할 JavaScript 네임스페이스를 선택합니다. -->
     <!-- 예시로, 'window.crypto' 네임스페이스 선택 시 'window.crypto.5JUYKyTgMFEdCDXn'와 같은 네임스페이스를 생성하여 모든 요소들을 그 속에 주입합니다. -->
-    <JavaScriptInjectionBaseNamespace>window.sessionStorage</JavaScriptInjectionBaseNamespace>
+    <JavaScriptInjectionBaseNamespace>window</JavaScriptInjectionBaseNamespace>
 
     <!-- 프로그램을 시작할 때 로드할 사이트 주소를 지정합니다. -->
-    <MainPage>https://kkutu.pink/</MainPage>
+    <MainPage>https://kkutu.co.kr/</MainPage>
 
     <!-- CefSharp의 기본 로그 파일명을 지정합니다. -->
     <LogFile>Browser.log</LogFile>
 
     <!-- User-Agent를 사용자가 직접 지정합니다. -->
-    <UserAgent></UserAgent>
+    <UserAgent>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36</UserAgent>
 
     <!-- 캐시 파일들이 저장될 폴더를 지정합니다. UserDataPath를 대체합니다. -->
     <CachePath>%CURRENTDIR%\BrowserCache</CachePath>
