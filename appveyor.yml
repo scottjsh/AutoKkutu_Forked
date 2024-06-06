@@ -5,7 +5,7 @@ configuration:
 - ReleaseSelenium
 environment:
   sonarcloud_apikey:
-    secure: 9a32e273785f2103595b603a0fe5f02e59e5fc45
+    secure: Jo/wJPpRU9pQYuIdI7bwCZV2ie7BZI54BTkbVX9Zkcugeb6LxVgP9tpF6bM2J3d4
   JAVA_HOME: C:\Program Files\Java\jdk17
 platform:
 - x64
