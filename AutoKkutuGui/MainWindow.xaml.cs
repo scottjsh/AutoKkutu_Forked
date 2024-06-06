@@ -26,7 +26,7 @@ public partial class MainWindow : Window
 	public const string ProgramVersion = "1.3-beta1";
 
 	// Succeed KKutu-Helper Release v5.6.8500
-	private const string ProgramTitle = $"AutoKkutu v{$ProgramVersion} - Next-gen KKutu-Helper V";
+	private const string ProgramTitle = $"AutoKkutu v{ProgramVersion} - Next-gen KKutu-Helper V";
 
 	private readonly Notifier notifier;
 	private readonly Main mainInstance;
