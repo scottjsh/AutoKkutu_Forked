@@ -1,6 +1,7 @@
 ## 본 리포는 [AutoKkutu](https://github.com/hsheric0210/AutoKkutu)의 일부 버그 수정 및 배포를 위해 *Fork*된 리포입니다.
 ### CefSharp 빌드에 대해서만 버그 수정 및 배포를 할 예정입니다.
-### Selenium 버전이 필요하시면 [Issue](https://github.com/scottjsh/AutoKkutu_Forked/issues)에 알려주세요. 추후 Selenium 빌드 지원도 고려해보겠습니다.
+### Selenium 버전이 필요하시면 [Issue](https://github.com/scottjsh/AutoKkutu_Forked/issues)에 알려주세요.
+### 추후 Selenium 빌드 지원도 고려해보겠습니다.
 # AutoKkutu :: 끄투의 자동화
 
 <p align="center" style="text-align:center">
