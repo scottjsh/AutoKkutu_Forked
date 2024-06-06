@@ -5,12 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
-        <CodeAnalysisRuleSet>..\.sonarlint\hsheric0210_autokkutucsharp.ruleset</CodeAnalysisRuleSet>
+        <CodeAnalysisRuleSet>..\.sonarlint\scottjsh_autokkutucsharp.ruleset</CodeAnalysisRuleSet>
         <Configurations>DebugCefSharp;ReleaseCefSharp;ReleaseSelenium;DebugSelenium</Configurations>
     </PropertyGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="..\.sonarlint\hsheric0210_autokkutu\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+      <AdditionalFiles Include="..\.sonarlint\scottjsh_autokkutu\CSharp\SonarLint.xml" Link="SonarLint.xml" />
     </ItemGroup>
 
     <ItemGroup>

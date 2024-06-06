@@ -10,8 +10,8 @@
         <CodeAnalysisRuleSet>AutoKkutuGui.ruleset</CodeAnalysisRuleSet>
         <StartupObject>AutoKkutuGui.App</StartupObject>
         <ApplicationIcon>jjoriping.ico</ApplicationIcon>
-        <RepositoryUrl>https://github.com/hsheric0210/AutoKkutu</RepositoryUrl>
-        <PackageProjectUrl>https://github.com/hsheric0210/AutoKkutu</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/scottjsh/AutoKkutu</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/scottjsh/AutoKkutu</PackageProjectUrl>
         <Nullable>enable</Nullable>
         <NeutralLanguage>en-US</NeutralLanguage>
         <Platforms>AnyCPU;x64;x86</Platforms>
@@ -51,7 +51,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <AdditionalFiles Include="..\.sonarlint\hsheric0210_autokkutu\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+        <AdditionalFiles Include="..\.sonarlint\scottjsh_autokkutu\CSharp\SonarLint.xml" Link="SonarLint.xml" />
         <Content Include="jjoriping.ico" />
     </ItemGroup>
 

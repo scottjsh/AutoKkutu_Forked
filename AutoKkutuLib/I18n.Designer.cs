@@ -979,7 +979,7 @@ namespace AutoKkutuLib {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AutoKkutu v{0} - Kkutu cheat.
+        ///   Looks up a localized string similar to AutoKkutu v{0} - Next-gen Kkutu-Helper V.
         /// </summary>
         public static string ProgramIntroduction {
             get {
