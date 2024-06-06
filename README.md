@@ -5,7 +5,7 @@
     <p align="center">로고 제작에 사용된 모레미 이미지는 <a href="https://github.com/JJoriping">쪼리핑</a>님에 의해 제작되었습니다.</p>
 </p>
 
-[![Build status](https://ci.appveyor.com/api/projects/status/khv4vif3agb36adt?svg=true)](https://ci.appveyor.com/project/scottjsh/autokkutu)
+[![Build status](https://ci.appveyor.com/api/projects/status/naj4ivudu5wrown4?svg=true)](https://ci.appveyor.com/project/scottjsh/autokkutu)
 [![Issues](https://img.shields.io/github/issues/scottjsh/AutoKkutu.svg)](https://github.com/scottjsh/AutoKkutu/issues)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/scottjsh/AutoKkutu)
 ![GitHub repo size](https://img.shields.io/github/repo-size/scottjsh/autokkutu)
