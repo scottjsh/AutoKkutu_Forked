@@ -103,13 +103,7 @@ public partial class Main
 		var flags = SetupPathFinderFlags(additionalFlags);
 		AutoKkutu.CreatePathFinder()
 			.SetGameMode(gameMode)
-			.SetPathDetails(new PathDetails
-			{
-				Flags = flags,
-				Condition = condition,
-				ReuseAlreadyUsed = Preference.ReturnModeEnabled,
-				MaxDisplayed = Preference.MaxDisplayedWordCount
-			})
+			.SetPathDetails(new PathDetails(condition, flags, Preference.ReturnModeEnabled, Preference.MaxDisplayedWordCount))
 			.SetWordPreference(Preference.ActiveWordPreference)
 			.BeginFind(OnPathUpdated);
 	}

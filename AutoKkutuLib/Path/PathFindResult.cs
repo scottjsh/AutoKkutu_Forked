@@ -38,11 +38,3 @@ public readonly struct PathFindResult
 	public static PathFindResult EndWord(PathDetails details)
 		=> new(PathFindResultType.EndWord, details, emptyList, emptyList, 0);
 }
-
-public enum PathFindResultType
-{
-	Found,
-	NotFound,
-	EndWord,
-	Error
-}

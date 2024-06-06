@@ -261,7 +261,8 @@ public partial class MainWindow : Window
 		if (currentSelected is not GuiPathObject path)
 			return;
 
-		path.Underlying.UpdateMarks(path.Underlying.Marks | PathMarks.Excluded & ~PathMarks.RemoveQueued);
+		path.Underlying.Excluded = true;
+		path.Underlying.RemoveQueued = false;
 		var filter = mainInstance.AutoKkutu.PathFilter;
 		filter.UnsupportedPaths.Add(path.Content);
 		filter.InexistentPaths.Remove(path.Content);
@@ -274,7 +275,8 @@ public partial class MainWindow : Window
 		if (currentSelected is not GuiPathObject path)
 			return;
 
-		path.Underlying.UpdateMarks(path.Underlying.Marks & ~(PathMarks.Excluded | PathMarks.RemoveQueued));
+		path.Underlying.Excluded = false;
+		path.Underlying.RemoveQueued = false;
 		var filter = mainInstance.AutoKkutu.PathFilter;
 		filter.UnsupportedPaths.Remove(path.Content);
 		filter.InexistentPaths.Remove(path.Content);
@@ -287,7 +289,8 @@ public partial class MainWindow : Window
 		if (currentSelected is not GuiPathObject path)
 			return;
 
-		path.Underlying.UpdateMarks(path.Underlying.Marks | PathMarks.RemoveQueued & ~PathMarks.Excluded);
+		path.Underlying.Excluded = false;
+		path.Underlying.RemoveQueued = true;
 		var filter = mainInstance.AutoKkutu.PathFilter;
 		filter.UnsupportedPaths.Add(path.Content);
 		filter.InexistentPaths.Add(path.Content);
@@ -439,13 +442,11 @@ public partial class MainWindow : Window
 			if (string.IsNullOrWhiteSpace(missionChar))
 				missionChar = mainInstance.AutoKkutu.Game.Session.WordCondition.MissionChar;
 
-			var details = new PathDetails
-			{
-				Flags = mainInstance.SetupPathFinderFlags(PathFlags.DoNotAutoEnter | PathFlags.DoNotCheckExpired),
-				Condition = InitialLaw.ApplyInitialLaw(new WordCondition(SearchField.Text, missionChar: missionChar ?? "", regexp: RegexpSearch.IsChecked ?? false)),
-				ReuseAlreadyUsed = mainInstance.Preference.ReturnModeEnabled,
-				MaxDisplayed = mainInstance.Preference.MaxDisplayedWordCount,
-			};
+			var details = new PathDetails(
+				InitialLaw.ApplyInitialLaw(new WordCondition(SearchField.Text, missionChar: missionChar ?? "", regexp: RegexpSearch.IsChecked ?? false)),
+				mainInstance.SetupPathFinderFlags(PathFlags.DoNotAutoEnter | PathFlags.DoNotCheckExpired),
+				mainInstance.Preference.ReturnModeEnabled,
+				mainInstance.Preference.MaxDisplayedWordCount);
 
 			mainInstance.AutoKkutu.CreatePathFinder()
 				.SetGameMode(gameMode)

@@ -22,30 +22,29 @@ public class PathFilter
 	public ICollection<string> UnsupportedPaths { get; } = new ConcurrentHashSet<string>();
 
 	/// <summary>
-	/// Apply special marks to the list of paths.
+	/// Filters out unqualified paths such as Inexistent paths, Unsupported paths, Already-used paths from the path list.
 	/// </summary>
-	/// <param name="pathList">The list of path to mark.</param>
-	/// <param name="reuseAlreadyUsed"><c>true</c> if re-using the previously used word is permitted, <c>false</c> otherwise.</param>
-	/// <returns>The marked path list.</returns>
-	/// <exception cref="ArgumentNullException">If <paramref name="pathList"/> is null.</exception>
-	public IImmutableList<PathObject> MarkPathList(IImmutableList<PathObject> pathList, bool reuseAlreadyUsed)
+	/// <param name="pathList">The input path list</param>
+	/// <returns>Qualified path list</returns>
+	/// <exception cref="ArgumentNullException">If <paramref name="pathList"/> is null</exception>
+	public IImmutableList<PathObject> FilterPathList(IImmutableList<PathObject> pathList, bool reuseAlreadyUsed)
 	{
 		if (pathList is null)
 			throw new ArgumentNullException(nameof(pathList));
 
-		var marked = ImmutableList.CreateBuilder<PathObject>();
+		var qualifiedList = new List<PathObject>();
 		foreach (var path in pathList)
 		{
-			var marks = path.Marks;
 			if (InexistentPaths.Contains(path.Content))
-				marks |= PathMarks.RemoveQueued;
+				path.RemoveQueued = true;
 			if (UnsupportedPaths.Contains(path.Content))
-				marks |= PathMarks.Excluded;
+				path.Excluded = true;
 			else if (!reuseAlreadyUsed && PreviousPaths.Contains(path.Content))
-				marks |= PathMarks.AlreadyUsed;
-			marked.Add(path with { Marks = marks });
+				path.AlreadyUsed = true;
+			else
+				qualifiedList.Add(path);
 		}
 
-		return marked.ToImmutable();
+		return qualifiedList.ToImmutableList();
 	}
 }

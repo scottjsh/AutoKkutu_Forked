@@ -3,34 +3,32 @@ using System.Text;
 
 namespace AutoKkutuLib;
 
-/// <summary>
-/// <para>단어 검색 시 추가적으로 지정할 옵션들을 나타냅니다.</para>
-/// </summary>
 public readonly struct PathDetails
 {
-	public static PathDetails Empty { get; } = new PathDetails
+	public static PathDetails Empty { get; } = new PathDetails(WordCondition.Empty, PathFlags.None, false, 0);
+
+	private readonly PathFlags flags;
+
+	public WordCondition Condition { get; }
+	public bool ReuseAlreadyUsed { get; }
+	public int MaxDisplayed { get; }
+
+	public PathDetails(WordCondition condition, PathFlags flags, bool reuse, int maxDisplay)
 	{
-		Flags = PathFlags.None,
-		Condition = WordCondition.Empty,
-		ReuseAlreadyUsed = false,
-		MaxDisplayed = 0,
-		RandomGeneratedCount = 10
-	};
+		this.flags = flags;
 
-	public readonly PathFlags Flags { get; init; }
-
-	public readonly WordCondition Condition { get; init; }
-	public readonly bool ReuseAlreadyUsed { get; init; }
-	public readonly int MaxDisplayed { get; init; }
-	public readonly int RandomGeneratedCount { get; init; }
-
-	public bool HasFlag(PathFlags flag) => Flags.HasFlag(flag);
-	public PathDetails WithFlags(PathFlags flags) => this with { Flags = Flags | flags };
-	public PathDetails WithoutFlags(PathFlags flags) => this with { Flags = Flags & ~flags };
+		Condition = condition;
+		ReuseAlreadyUsed = reuse;
+		MaxDisplayed = maxDisplay;
+	}
 
 	public static implicit operator WordCondition(PathDetails param) => param.Condition;
 
-	public override bool Equals([NotNullWhen(true)] object? obj) => obj is PathDetails other && IsSimilar(other) && Condition.Equals(other.Condition) && Flags == other.Flags && MaxDisplayed == other.MaxDisplayed;
+	public bool HasFlag(PathFlags flag) => flags.HasFlag(flag);
+	public PathDetails WithFlags(PathFlags flags) => new(Condition, this.flags | flags, ReuseAlreadyUsed, MaxDisplayed);
+	public PathDetails WithoutFlags(PathFlags flags) => new(Condition, this.flags & ~flags, ReuseAlreadyUsed, MaxDisplayed);
+
+	public override bool Equals([NotNullWhen(true)] object? obj) => obj is PathDetails other && IsSimilar(other) && Condition.Equals(other.Condition) && flags == other.flags && MaxDisplayed == other.MaxDisplayed;
 
 	public bool IsSimilar(PathDetails other) => Condition.IsSimilar(other.Condition)
 		&& ReuseAlreadyUsed == other.ReuseAlreadyUsed
@@ -38,7 +36,7 @@ public readonly struct PathDetails
 		&& HasFlag(PathFlags.UseAttackWord) == other.HasFlag(PathFlags.UseAttackWord)
 		&& HasFlag(PathFlags.MissionWordExists) == other.HasFlag(PathFlags.MissionWordExists);
 
-	public override int GetHashCode() => HashCode.Combine(Flags, Condition, ReuseAlreadyUsed, MaxDisplayed);
+	public override int GetHashCode() => HashCode.Combine(flags, Condition, ReuseAlreadyUsed, MaxDisplayed);
 
 	public static bool operator ==(PathDetails left, PathDetails right) => left.Equals(right);
 
@@ -49,7 +47,7 @@ public readonly struct PathDetails
 		var builder = new StringBuilder();
 		builder.Append("PathDetails{");
 		builder.Append(nameof(Condition)).Append(": ").Append(Condition).Append(", ");
-		builder.Append("Flags=[").Append(Flags).Append("], ");
+		builder.Append("Flags=[").Append(flags).Append("], ");
 		builder.Append(nameof(ReuseAlreadyUsed)).Append(": ").Append(ReuseAlreadyUsed).Append(", ");
 		builder.Append(nameof(MaxDisplayed)).Append(": ").Append(MaxDisplayed);
 		return builder.Append('}').ToString();
@@ -100,4 +98,12 @@ public enum PathFlags
 	/// 채팅창을 통해 수동으로 보낸 메시지이거나, 타자 대결 자동 입력일 때 등의 경우 설정되는 플래그입니다.
 	/// </remarks>
 	DoNotCheckExpired = 1 << 5,
+}
+
+public enum PathFindResultType
+{
+	Found,
+	NotFound,
+	EndWord,
+	Error
 }
