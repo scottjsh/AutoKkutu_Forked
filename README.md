@@ -9,7 +9,7 @@
 [![Issues](https://img.shields.io/github/issues/scottjsh/AutoKkutu.svg)](https://github.com/scottjsh/AutoKkutu/issues)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/scottjsh/AutoKkutu)
 ![GitHub repo size](https://img.shields.io/github/repo-size/scottjsh/autokkutu)
-[![Maintainability](https://api.codeclimate.com/v1/badges/7709ad79cf511830e0bf/maintainability)](https://codeclimate.com/github/scottjsh/AutoKkutu/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2875f1a006f2b348bcef/maintainability)](https://codeclimate.com/github/scottjsh/AutoKkutu/maintainability)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=scottjsh_AutoKkutu&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=scottjsh_AutoKkutu)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=scottjsh_AutoKkutu&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=scottjsh_AutoKkutu)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=scottjsh_AutoKkutu&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=scottjsh_AutoKkutu)
