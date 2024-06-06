@@ -1,18 +1,18 @@
-﻿version: 1.2 b{build}
+﻿version: 1.3 b{build}
 image: Visual Studio 2022
 configuration:
 - ReleaseCefSharp
 - ReleaseSelenium
 environment:
   sonarcloud_apikey:
-    secure: yvB8aN0TIdgxBpIu4otx4bAAOFTXvf4lCvabOeU7Z4eck6xzqlVfB99dQmT3bc+9
+    secure: 9a32e273785f2103595b603a0fe5f02e59e5fc45
   JAVA_HOME: C:\Program Files\Java\jdk17
 platform:
 - x64
 build_script:
 - set PATH=%JAVA_HOME%\bin;%PATH%
 - dotnet tool install --global dotnet-sonarscanner
-- dotnet sonarscanner begin /o:"hsheric0210" /k:"hsheric0210_AutoKkutu" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=%sonarcloud_apikey%
+- dotnet sonarscanner begin /o:"scottjsh" /k:"scottjsh_AutoKkutu" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=%sonarcloud_apikey%
 - nuget restore
 - dotnet restore
 - dotnet publish /verbosity:normal "AutoKkutuGui/AutoKkutuGui.csproj" --no-self-contained -c %CONFIGURATION%  -a %PLATFORM% -o "publish/%CONFIGURATION%.%PLATFORM%"
