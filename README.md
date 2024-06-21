@@ -3,8 +3,9 @@
 ### - Selenium 버전이 필요하시면 [Issue](https://github.com/scottjsh/AutoKkutu_Forked/issues)에 알려주세요.
 ### - 추후 Selenium 빌드 지원도 고려해보겠습니다.
 ## 추가된 기능
+> ===BOF===
 > ### 광고 제거
-> ===END===
+> ===EOF===
 
 # AutoKkutu :: 끄투의 자동화
 
