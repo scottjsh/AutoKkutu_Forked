@@ -8,6 +8,10 @@
 > ### 구글 로그인 활성화
 > ===EOF===
 
+## 정지 여부 (우회 기능 사용)
+> ### 끄투코리아 정지 X
+> 나머지는 추후 테스트
+
 # AutoKkutu :: 끄투의 자동화
 
 <p align="center" style="text-align:center">
