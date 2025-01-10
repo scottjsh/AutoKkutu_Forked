@@ -19,6 +19,8 @@
     <p align="center">로고 제작에 사용된 모레미 이미지는 <a href="https://github.com/JJoriping">쪼리핑</a>님에 의해 제작되었습니다.</p>
 </p>
 
+[![Downloads][downloads-shield]][downloads-url]
+
 [![Build status](https://ci.appveyor.com/api/projects/status/9w5a25r7wahkmbgl?svg=true)](https://ci.appveyor.com/project/scottjsh/autokkutu-forked)
 [![Issues](https://img.shields.io/github/issues/scottjsh/AutoKkutu_Forked.svg)](https://github.com/scottjsh/AutoKkutu_Forked/issues)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/scottjsh/AutoKkutu_Forked)
@@ -221,3 +223,12 @@ ALTER TABLE kkt_endword_list CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_ge
 ## 관련 레포지토리
 
 - [univdev/Kkutu-helper](https://github.com/univdev/Kkutu-helper)
+
+
+
+
+
+
+
+[downloads-shield]: https://img.shields.io/github/downloads/scottjsh/AutoKkutu_Forked/total?style=for-the-badge&logo=github
+[downloads-url]: https://github.com/scottjsh/AutoKkutu_Forked/releases/latest
